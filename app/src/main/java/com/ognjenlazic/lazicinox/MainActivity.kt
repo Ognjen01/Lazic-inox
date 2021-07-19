@@ -102,7 +102,8 @@ class MainActivity : AppCompatActivity() {
                 "Ako želite da izbrišete model, jednom kliknite na njega i pojaviće se crveno dugme \"OBRIŠI MODEL\".\n" +
                 "Klikom na crveno dugme bišete model. \n" +
                 "Moguće je postaviti više modela na istu površinu. \n" +
-                "Modele birate tako što izvučete meni modela koji se nalazi na dnu ekrana. \n"
+                "Modele birate tako što izvučete meni modela koji se nalazi na dnu ekrana. \n" +
+                "Klikom na dugme sa kamerom možete da slikate model u realnom okruženju, dužim pritiskom na isto dugme model možete snimati. \n"
         )
             .setTitle("Uputstvo")
             .setNegativeButton("OK") { dialog, id ->
@@ -132,7 +133,7 @@ class MainActivity : AppCompatActivity() {
         fab.setOnTouchListener { view, motionEvent ->
             if(motionEvent.action == MotionEvent.ACTION_UP && isRecording){
                 isRecording = videoRecorder.toggleRecordingState()
-                Toast.makeText(this, "Saved video to gallery", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Video je sačuvan.", Toast.LENGTH_LONG).show()
                 true
             } else false
 
